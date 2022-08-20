@@ -1,13 +1,17 @@
-from RPA.Windows import Windows
+from pywinauto.application import Application
 import datetime
 import os
+import time
 import sys
 
-windows = Windows()
+
 
 
 def automate_notepad():
-    windows.windows_run("C:/Users/Public/Desktop/edock.exe")
+    app = Application().start("notepad.exe")
+    list = app.windows()
+    print(list)
+
    
 
 
