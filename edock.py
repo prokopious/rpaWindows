@@ -7,13 +7,13 @@ import sys
 
 
 
-def automate_notepad():
-    app = Application().start("notepad.exe")
-    list = app.windows()
-    print(list)
+app = Application().start("C:/Users/huyetto/Desktop/eDockFiles/eDock.exe")
+dlg = app.top_window()
+dlg['Continue'].click_input()
+app['frmLogin'].child_window(title="Log In", auto_id="btnLogIn", control_type="System.Windows.Forms.Button").click_input()
+
+dialogs = app.windows()
+print(dialogs)
 
    
 
-
-if __name__ == "__main__":
-    automate_notepad()
